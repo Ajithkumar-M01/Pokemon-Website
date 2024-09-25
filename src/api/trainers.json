@@ -1,0 +1,164 @@
+{
+  "regions": [
+    {
+      "Kanto": [
+        {
+          "name": "Ash Ketchum",
+          "bio": "The main protagonist"
+        },
+        {
+          "name": "Brock",
+          "bio": "Pewter City Gym Leader"
+        },
+        {
+          "name": "Misty",
+          "bio": "Cerulean City Gym Leader"
+        },
+        {
+          "name": "Lt. Surge",
+          "bio": "Vermilion City Gym Leader"
+        }
+      ]
+    },
+    {
+      "Johto": [
+        {
+          "name": "Falkner",
+          "bio": "Violet City Gym Leader"
+        },
+        {
+          "name": "Whitney",
+          "bio": "Goldenrod City Gym Leader"
+        },
+        {
+          "name": "Morty",
+          "bio": "Ecruteak City Gym Leader"
+        },
+        {
+          "name": "Jasmine",
+          "bio": "Olivine City Gym Leader"
+        }
+      ]
+    },
+    {
+      "Hoenn": [
+        {
+          "name": "May",
+          "bio": "One of Ash’s companions"
+        },
+        {
+          "name": "Steven Stone",
+          "bio": "Champion of the Hoenn region"
+        },
+        {
+          "name": "Roxanne",
+          "bio": "Rustboro City Gym Leader"
+        },
+        {
+          "name": "Brawly",
+          "bio": "Dewford Town Gym Leader"
+        }
+      ]
+    },
+    {
+      "Sinnoh": [
+        {
+          "name": "Dawn",
+          "bio": "One of Ash’s companions"
+        },
+        {
+          "name": "Cynthia",
+          "bio": "Champion of the Sinnoh region"
+        },
+        {
+          "name": "Roark",
+          "bio": "Oreburgh City Gym Leader"
+        },
+        {
+          "name": "Gardenia",
+          "bio": "Eterna City Gym Leader"
+        }
+      ]
+    },
+    {
+      "Unove": [
+        {
+          "name": "Hilbert/Hilda",
+          "bio": "Protagonists of Pokémon Black and White"
+        },
+        {
+          "name": "Cheren",
+          "bio": "Aspertia City Gym Leader"
+        },
+        {
+          "name": "Elesa",
+          "bio": "Nimbasa City Gym Leader"
+        },
+        {
+          "name": "Drayden",
+          "bio": "Opelucid City Gym Leader"
+        }
+      ]
+    },
+    {
+      "Kalos": [
+        {
+          "name": "Serena",
+          "bio": "One of Ash’s companions"
+        },
+        {
+          "name": "Diantha",
+          "bio": "Champion of the Kalos region"
+        },
+        {
+          "name": "Viola",
+          "bio": "Santalune City Gym Leader"
+        },
+        {
+          "name": "Korrina",
+          "bio": "Shalour City Gym Leader"
+        }
+      ]
+    },
+    {
+      "Alola": [
+        {
+          "name": "Sun/Moon",
+          "bio": "Protagonists of Pokémon Sun and Moon"
+        },
+        {
+          "name": "Kiawe",
+          "bio": "One of Ash’s classmates"
+        },
+        {
+          "name": "Lana",
+          "bio": "One of Ash’s classmates"
+        },
+        {
+          "name": "Hau",
+          "bio": "Rival character in the games"
+        }
+      ]
+    },
+    {
+      "Galar": [
+        {
+          "name": "Victor/Gloria",
+          "bio": "Protagonists of Pokémon Sword and Shield"
+        },
+        {
+          "name": "Leon",
+          "bio": "Champion of the Galar region"
+        },
+        {
+          "name": "Milo",
+          "bio": "Turffield Gym Leader"
+        },
+        {
+          "name": "Nessa",
+          "bio": "Hulbury Gym Leader"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+[
+    {
+        "factId": 1,
+        "title": "Pikachu wasn’t the original mascot",
+        "fact": "Initially, the creators considered Clefairy and Poliwhirl as the franchise’s mascot before settling on Pikachu due to its popularity and gender-neutral appeal."
+    },
+    {
+        "factId": 2,
+        "title": "Pokémon’s name origin",
+        "fact": "The name “Pokémon” is a contraction of Pocket Monsters."
+    },
+    {
+        "factId": 3,
+        "title": "The creator’s inspiration",
+        "fact": "Satoshi Tajiri, the creator of Pokémon, was inspired by his childhood hobby of insect collecting."
+    },
+    {
+        "factId": 4,
+        "title": "Guinness World Record",
+        "fact": "Several Pokémon characters hold Guinness World Records, including Pikachu for being featured on legal tender currency."
+    },
+    {
+        "factId": 5,
+        "title": "Pikachu’s design inspiration",
+        "fact": "Pikachu was designed after a squirrel, not a mouse."
+    },
+    {
+        "factId": 6,
+        "title": "Pokémon manhole covers",
+        "fact": "In Japan, there are Pokémon-themed manhole covers called “Pokéfuta” that feature various Pokémon designs."
+    },
+    {
+        "factId": 7,
+        "title": "Slowbro’s unique trait",
+        "fact": "Slowbro is one of the few Pokémon that can potentially devolve, reverting back to its previous form."
+    },
+    {
+        "factId": 8,
+        "title": "Pokémon Go’s massive success",
+        "fact": "The mobile game Pokémon Go has been downloaded over 1 billion times, making it one of the most downloaded mobile games ever."
+    },
+    {
+        "factId": 9,
+        "title": "Over 1000 species",
+        "fact": "As of now, there are over 1000 different species of Pokémon."
+    },
+    {
+        "factId": 10,
+        "title": "Rhydon was the first Pokémon ever created",
+        "fact": "Despite not being the first in the Pokédex, Rhydon holds the title of the first Pokémon designed."
+    }
+]
