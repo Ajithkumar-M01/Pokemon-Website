@@ -6,7 +6,7 @@ import ScrollAnimationLeft3 from "./ScrollAnimationLeft3";
 
 const Timeline = () => {
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="w-11/12 mx-auto mb-5">
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
         <li>
           <div className="timeline-middle">

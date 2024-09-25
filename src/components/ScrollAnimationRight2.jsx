@@ -27,7 +27,7 @@ const ScrollAnimationRight1 = () => {
       animate={controls}
       variants={{
         visible: { opacity: 1, x: -400 },
-        hidden: { opacity: 0, x: -550 },
+        hidden: { opacity: 0, x: -500 },
       }}
       transition={{ duration: 1 }}
       alt="Animated Image"
