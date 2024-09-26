@@ -3,10 +3,10 @@ const ThemeController = () => {
   const [theme, setTheme] = useState("light");
 
   const handleThemeChange = (event) => {
-    setTheme(event.target.checked ? "dark" : "light");
+    setTheme(event.target.checked ? "light" : "dark");
     document.documentElement.setAttribute(
       "data-theme",
-      event.target.checked ? "dark" : "light"
+      event.target.checked ? "light" : "dark"
     );
   };
   return (
