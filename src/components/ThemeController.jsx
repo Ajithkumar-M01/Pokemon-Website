@@ -1,6 +1,6 @@
 import { useState } from "react";
 const ThemeController = () => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   const handleThemeChange = (event) => {
     setTheme(event.target.checked ? "dark" : "light");
