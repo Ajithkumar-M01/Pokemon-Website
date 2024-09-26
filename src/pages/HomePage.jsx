@@ -12,7 +12,7 @@ const HomePage = () => {
         alt="pokemon tean"
         className="w-3/4 lg:w-2/3 mx-auto rounded-xl mt-5"
       />
-      <div className="bg-zinc-800 text-center text-3xl md:text-5xl lg:text-5xl mx-auto rounded-full my-3 w-3/4 md:w-1/2 lg:w-1/2 py-2 md:py-5 lg:py-5">
+      <div className="bg-zinc-800 text-center text-3xl md:text-5xl lg:text-5xl mx-auto rounded-full my-3 w-3/4 md:w-1/2 lg:w-1/2 p-2 md:py-5 lg:py-5">
         <motion.span
           animate={{
             backgroundPositionX: "-100%",
