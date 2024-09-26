@@ -125,7 +125,7 @@ const Timeline = () => {
           </div>
           <hr />
         </li>
-        <li className="mb-32 lg:mb-5 md:mb-5">
+        <li>
           <hr />
           <div className="timeline-middle">
             <svg
