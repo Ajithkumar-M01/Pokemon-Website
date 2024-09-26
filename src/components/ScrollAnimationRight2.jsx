@@ -1,8 +1,7 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import teamRocket from "../assets/teamRocket.png";
-
+import mewTwo from "../assets/mewTwo.png"
 const ScrollAnimationRight1 = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -22,16 +21,16 @@ const ScrollAnimationRight1 = () => {
   return (
     <motion.img
       ref={ref}
-      src={teamRocket}
+      src={mewTwo}
       initial="hidden"
       animate={controls}
       variants={{
-        visible: { opacity: 1, x: -400 },
+        visible: { opacity: 1, x: -300 },
         hidden: { opacity: 0, x: -500 },
       }}
       transition={{ duration: 1 }}
       alt="Animated Image"
-      style={{ width: "50%", height: "auto", position: "relative", marginTop: "-8.5em" }} // Adjust as needed
+      style={{ width: "25%", height: "10em", position: "relative", marginTop: "-10.5em" }} // Adjust as needed
     />
   );
 };
