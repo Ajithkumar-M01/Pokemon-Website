@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
-    <div>
+    <div >
       {/* <img src={pokemonTitle} alt="pokemon" className="w-1/3 mx-auto " /> */}
       <img
         src={PokeTeam}
