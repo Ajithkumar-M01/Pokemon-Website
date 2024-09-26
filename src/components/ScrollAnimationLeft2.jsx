@@ -30,7 +30,7 @@ const ScrollAnimationLeft1 = () => {
       }}
       transition={{ duration: 1 }}
       alt="Animated Image"
-      style={{ width: "25%", height: "auto", position: "relative", marginTop: "-8.5em" }} // Adjust as needed
+      style={{ width: "25%", height: "10em", position: "relative", marginTop: "-8.5em" }} // Adjust as needed
     />
   );
 };
