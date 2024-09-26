@@ -1,12 +1,12 @@
 import { useState } from "react";
 const ThemeController = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   const handleThemeChange = (event) => {
-    setTheme(event.target.checked ? "light" : "dark");
+    setTheme(event.target.checked ? "dark" : "light");
     document.documentElement.setAttribute(
       "data-theme",
-      event.target.checked ? "light" : "dark"
+      event.target.checked ? "dark" : "light"
     );
   };
   return (
