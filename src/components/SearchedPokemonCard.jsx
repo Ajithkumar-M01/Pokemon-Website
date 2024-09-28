@@ -23,28 +23,34 @@ const SearchedPokemonCard = ({ pokemons }) => {
       {/* --------------------------------------------------------------------------- */}
 
       <div class="card flex justify-center align-middle w-52">
-          <div class="wrapper shadow-xl shadow-zinc-400/75 rounded-xl">
-            <img
-              src={pokemons.sprites.other.dream_world.front_default}
-              class="object-contain h-full p-5"
-            />
-          </div>
+        <div class="wrapper shadow-xl shadow-zinc-400/75 rounded-xl">
+          <img
+            src={pokemons.sprites.other.dream_world.front_default}
+            class="object-contain h-full p-5"
+          />
+          <p className="text-sm text-center -mt-10 block lg:hidden md:hidden">
+            click or hover for more details
+          </p>
+        </div>
 
-          <div class="character">
-            <img src={pokemons.sprites.other.dream_world.front_default} className="w-svw"/>
-            <h2
-              className="card-title title text-center justify-center"
-              style={{ textTransform: "uppercase" }}
-            >
-              {pokemons.name}
-            </h2>
-            <div className="card-body items-center p-0">
-              <div className="card-actions">
-                <PokemonDetails pokemon={pokemons} />
-              </div>
+        <div class="character">
+          <img
+            src={pokemons.sprites.other.dream_world.front_default}
+            className="w-svw"
+          />
+          <h2
+            className="card-title title text-center justify-center"
+            style={{ textTransform: "uppercase" }}
+          >
+            {pokemons.name}
+          </h2>
+          <div className="card-body items-center p-0">
+            <div className="card-actions">
+              <PokemonDetails pokemon={pokemons} />
             </div>
           </div>
         </div>
+      </div>
     </div>
   );
 };

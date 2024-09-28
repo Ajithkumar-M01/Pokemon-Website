@@ -30,10 +30,16 @@ const PokemonCard = ({ pokemons }) => {
               src={poke.sprites.other.dream_world.front_default}
               class="object-contain h-full p-5"
             />
+            <p className="text-sm text-center -mt-10 block lg:hidden md:hidden">
+              click or hover for more details
+            </p>
           </div>
 
           <div class="character">
-            <img src={poke.sprites.other.dream_world.front_default} className="w-svw"/>
+            <img
+              src={poke.sprites.other.dream_world.front_default}
+              className="w-svw"
+            />
             <h2
               className="card-title title text-center justify-center"
               style={{ textTransform: "uppercase" }}

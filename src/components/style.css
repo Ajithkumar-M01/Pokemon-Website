@@ -47,6 +47,11 @@
   transition: opacity 1s ease;
 }
 
+.card:hover .wrapper p {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
 
 .wrapper::before,
 .wrapper::after {
