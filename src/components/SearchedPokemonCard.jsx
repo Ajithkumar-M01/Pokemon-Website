@@ -39,7 +39,7 @@ const SearchedPokemonCard = ({ pokemons }) => {
             className="w-svw"
           />
           <h2
-            className="card-title title text-center justify-center"
+            className="card-title title text-center justify-center text-zinc-950"
             style={{ textTransform: "uppercase" }}
           >
             {pokemons.name}
