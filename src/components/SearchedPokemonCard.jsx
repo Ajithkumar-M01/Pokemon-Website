@@ -1,10 +1,10 @@
 import PokemonDetails from "./PokemonDetails";
-// import "./style.css";
+import "./style.css";
 
 const SearchedPokemonCard = ({ pokemons }) => {
   return (
     <div className="flex justify-center">
-      <div className="card bg-base-100 w-96 shadow-xl cardFlex" key={pokemons.id}>
+      {/* <div className="card bg-base-100 w-96 shadow-xl cardFlex" key={pokemons.id}>
         <figure className="px-10 pt-10">
           <img
             src={pokemons.sprites.other.dream_world.front_default}
@@ -19,11 +19,11 @@ const SearchedPokemonCard = ({ pokemons }) => {
             <PokemonDetails pokemon={pokemons} />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* --------------------------------------------------------------------------- */}
 
-      {/* <div class="card flex justify-center align-middle w-52">
+      <div class="card flex justify-center align-middle w-52">
         <div class="wrapper shadow-xl shadow-zinc-400/75 rounded-xl">
           <img
             src={pokemons.sprites.other.dream_world.front_default}
@@ -51,7 +51,7 @@ const SearchedPokemonCard = ({ pokemons }) => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
