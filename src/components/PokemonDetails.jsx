@@ -13,7 +13,7 @@ const PokemonDetails = ({ pokemon }) => {
         className="modal modal-bottom sm:modal-middle"
         key={pokemon.id}
       >
-        <div className="modal-box">
+        <div className="modal-box text-center">
           <h3 className="font-bold text-3xl uppercase h-1/5 mb-5">{pokemon.name}</h3>
           <div className="flex gap-2" style={{height:'70%'}}>
             <div className="bg-zinc-700 text-zinc-100 w-1/5 rounded-xl py-7">
