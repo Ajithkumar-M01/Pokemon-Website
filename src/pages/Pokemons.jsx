@@ -88,7 +88,7 @@ const Pokemons = () => {
           {pokemon && <PokemonCard pokemons={pokemon} />}
           {pokemon && (
             <button
-              className="bg-red-600 hover:bg-white px-5 py-2 rounded-full mx-auto block my-10 text-white hover:text-red-600 hover:shadow-md hover:shadow-red-600"
+              className="bg-red-600 hover:bg-white px-5 py-2 rounded-full mx-auto block mt-28 mb-5 text-white hover:text-red-600 hover:shadow-md hover:shadow-red-600"
               onClick={nextPage}
             >
               next page
