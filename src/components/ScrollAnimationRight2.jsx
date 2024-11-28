@@ -2,7 +2,7 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import mewTwo from "../assets/mewTwo.png"
-const ScrollAnimationRight1 = () => {
+const ScrollAnimationRight2 = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     //   triggerOnce: true,
@@ -30,10 +30,11 @@ const ScrollAnimationRight1 = () => {
       }}
       transition={{ duration: 1 }}
       alt="Animated Image"
-      style={{ width: "25%", height: "10em", position: "relative", marginTop: "-10.5em" }} // Adjust as needed
+      style={{ width: "25%", height: "10em", position: "relative", marginTop: "-10.5em" }}
+      className="hidden sm:block"
     />
   );
 };
 
-export default ScrollAnimationRight1;
+export default ScrollAnimationRight2;
 

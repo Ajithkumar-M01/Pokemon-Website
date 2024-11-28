@@ -2,7 +2,7 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import lucario from "../assets/lucario.png";
-const ScrollAnimationLeft1 = () => {
+const ScrollAnimationLeft2 = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     // triggerOnce: true,
@@ -30,9 +30,10 @@ const ScrollAnimationLeft1 = () => {
       }}
       transition={{ duration: 1 }}
       alt="Animated Image"
-      style={{ width: "25%", height: "10em", position: "relative", marginTop: "-8.5em" }} // Adjust as needed
+      style={{ width: "25%", height: "10em", position: "relative", marginTop: "-8.5em" }}
+      className="hidden sm:block"
     />
   );
 };
 
-export default ScrollAnimationLeft1;
+export default ScrollAnimationLeft2;

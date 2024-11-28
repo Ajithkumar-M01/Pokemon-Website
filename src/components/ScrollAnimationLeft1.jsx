@@ -31,6 +31,7 @@ const ScrollAnimationLeft1 = () => {
       transition={{ duration: 1 }}
       alt="Animated Image"
       style={{ width: "25%", height: "10em", position: "relative", marginTop: "-8.5em" }}
+      className="hidden sm:block"
     />
   );
 };

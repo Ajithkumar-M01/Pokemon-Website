@@ -31,7 +31,8 @@ const ScrollAnimationRight3 = () => {
       }}
       transition={{ duration: 1 }}
       alt="Animated Image"
-      style={{ width: "50%", height: "auto", position: "relative", marginTop: "-8.5em" }} // Adjust as needed
+      style={{ width: "50%", height: "auto", position: "relative", marginTop: "-8.5em" }}
+      className="hidden sm:block"
     />
   );
 };
