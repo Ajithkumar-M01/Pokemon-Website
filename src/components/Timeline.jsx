@@ -53,7 +53,7 @@ const Timeline = () => {
               />
             </svg>
           </div>
-          <div className="timeline-end mb-10">
+          <div className="timeline-end mb-2 sm:mb-10">
             <time className="font-mono italic">1996</time>
             <div className="text-lg font-black mt-1">
               Release of Pokémon Red and Green
@@ -115,7 +115,7 @@ const Timeline = () => {
               />
             </svg>
           </div>
-          <div className="timeline-end mb-10">
+          <div className="timeline-end mb-2 sm:mb-10">
             <time className="font-mono italic">1997</time>
             <div className="text-lg font-black mt-1">Pokémon Anime Debut</div>
             The Pokémon anime series "Pokémon-I Choose You!" premiered in Japan

@@ -27,11 +27,11 @@ const ScrollAnimationRight3 = () => {
       animate={controls}
       variants={{
         visible: { opacity: 1, x: -400 },
-        hidden: { opacity: 0, x: -500 },
+        hidden: { opacity: 0, x: -550 },
       }}
       transition={{ duration: 1 }}
       alt="Animated Image"
-      style={{ width: "50%", height: "auto", position: "relative", marginTop: "-8.5em" }}
+      style={{ width: "50%", height: "auto", position: "relative", marginTop: "-10.5em" }}
       className="hidden sm:block"
     />
   );
