@@ -38,7 +38,7 @@ const Pokemons = () => {
     setLoading(true);
     setPokemon("");
 
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokeTitle}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokeTitle.toLocaleLowerCase()}`)
       .then((res) => res.json())
       .then((data) => {
         setSearchedPokemon(data);
@@ -68,7 +68,7 @@ const Pokemons = () => {
           <div className="flex justify-center gap-2 my-5">
             <input
               type="text"
-              onChange={(e) => setPokeTitle(e.target.value)}
+              onChange={(e) => setPokeTitle(e.target.value.toLocaleLowerCase())}
               className="rounded-full px-5 border-solid border-2 border-red-600"
               placeholder="Catch a Pokemon..."
             />
