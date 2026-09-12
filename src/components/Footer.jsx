@@ -1,56 +1,117 @@
+import { Link } from "react-router-dom";
 import pokeballWhite from "../assets/pokeballWhite.png";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const quickLinks = [
+    { label: "Home", to: "/" },
+    { label: "Pokemons", to: "/pokemons" },
+    { label: "Regions & Facts", to: "/funfacts" },
+  ];
+
   return (
-    <footer className="footer bg-neutral text-neutral-content items-center p-4">
-      <aside className="flex items-center">
-        <img src={pokeballWhite} alt="pokeball logo" className="w-1/12" />
-        <div>
-          <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
-          <p>
-            Fetch powered by <a href="https://pokeapi.co/">Pokeapi.co</a>
+    <footer className="relative mt-10 pt-1">
+      <button
+        onClick={scrollToTop}
+        aria-label="Back to top"
+        className="absolute right-2 top-0 z-10 grid h-10 w-10 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-base-200 text-base-content shadow-lg ring-1 ring-base-300 transition hover:scale-110 hover:bg-red-600 hover:text-white border border-red-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 19V5" />
+          <path d="m5 12 7-7 7 7" />
+        </svg>
+      </button>
+      <div className="h-1 bg-gradient-to-r from-red-600 via-yellow-400 to-red-600" />
+
+      <div className="bg-base-200 text-base-content">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-10 md:flex-row md:items-center md:justify-between">
+          <div>
+            <div className="flex items-center gap-3">
+              <img
+                src={pokeballWhite}
+                alt="pokeball logo"
+                className="h-11 w-11 drop-shadow-md"
+              />
+              <div>
+                <h3 className="text-xl font-bold tracking-wide">Pokémon Explorer</h3>
+              </div>
+            </div>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed opacity-80">
+              A trainer&apos;s guide to the Pokémon world — browse Pokémons, explore the
+              regions, and uncover fun facts about every generation.
+            </p>
+          </div>
+
+          <nav aria-label="Quick links" className="md:text-right">
+            <h4 className="text-sm font-semibold uppercase tracking-widest opacity-60">
+              Quick Links
+            </h4>
+            <ul className="mt-4 space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-sm opacity-80 transition hover:text-primary hover:opacity-100"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="border-t border-base-300" />
+        </div>
+
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-4 text-sm sm:flex-row">
+          <p className="opacity-80">
+            Copyright © {year} Pokémon Explorer.
           </p>
-          <p>
-            Source: Pokemon world created by Satoshi Tajiri and Ken Sugimori
+          <div className="flex items-center gap-6">
+            <p className="text-sm opacity-80">
+              Pokémon data provided by{" "}
+              <a
+                href="https://pokeapi.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-red-600 underline underline-offset-2 transition hover:text-primary"
+              >
+                PokeAPI
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-black/10 px-6 py-3">
+          <p className="text-center text-sm leading-relaxed opacity-90">
+            Pokémon was created by Japanese video game designer Satoshi Tajiri, with
+            original character designs by artist Ken Sugimori.
+          </p>
+          <div className="mx-auto mt-2 h-px w-1/4 min-w-[6rem] bg-base-content/20" />
+          <p className="mt-2 text-center text-sm leading-relaxed opacity-90">
+            Pokémon Explorer is a fan-made project and is not affiliated with, endorsed, or
+            sponsored by The Pokémon Company, Nintendo, or Game Freak. Pokémon and Pokémon
+            character names are trademarks of Nintendo.
           </p>
         </div>
-      </aside>
-
-      <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <a>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            className="fill-current"
-          >
-            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-          </svg>
-        </a>
-        <a>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            className="fill-current"
-          >
-            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-          </svg>
-        </a>
-        <a>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            className="fill-current"
-          >
-            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-          </svg>
-        </a>
-      </nav>
+      </div>
     </footer>
   );
 };
