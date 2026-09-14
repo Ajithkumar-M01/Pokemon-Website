@@ -10,7 +10,7 @@ const Navbar = () => {
     setIsDDOpen(false);
   };
   return (
-    <div className="p-3 bg-orange-500">
+    <div className="sticky top-0 z-40 p-3 bg-orange-500">
       <div className="navbar px-5 bg-orange-200 rounded-full">
         <div className="flex-1">
           {/* <a href="/">

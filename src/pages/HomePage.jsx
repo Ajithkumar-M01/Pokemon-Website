@@ -1,13 +1,12 @@
 import { useRef, useState } from "react";
 import Timeline from "../components/Timeline";
 import PokeTeam from "../assets/pokeTeam.jpg";
-import { motion, useAnimationControls } from "framer-motion";
+import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 
 const HomePage = () => {
   const [hasHovered, setHasHovered] = useState(false);
-  const [showColorFact, setShowColorFact] = useState(false);
+  const [activeFact, setActiveFact] = useState(null);
   const [factPlacement, setFactPlacement] = useState("below");
-  const titleRef = useRef(null);
   const colorFacts = [
     { name: "Red", hex: "#E3350D", title: "Pokémon Red", year: "1996" },
     { name: "Green", hex: "#3FAE49", title: "Pokémon Green", year: "1996" },
@@ -23,19 +22,16 @@ const HomePage = () => {
   const wantVideoRef = useRef(false);
   const REG_POKEMON_VIDEO_ID = "MpaHR-V_R-o";
 
-  const handleFactMouseEnter = () => {
-    const el = titleRef.current;
-    if (el) {
-      const rect = el.getBoundingClientRect();
-      setFactPlacement(
-        window.innerHeight - rect.bottom < 220 ? "above" : "below"
-      );
-    }
-    setShowColorFact(true);
+  const handleFactEnter = (index, e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setFactPlacement(
+      window.innerHeight - rect.bottom < 240 ? "above" : "below"
+    );
+    setActiveFact(index);
   };
 
-  const handleFactMouseLeave = () => {
-    setShowColorFact(false);
+  const handleFactLeave = () => {
+    setActiveFact(null);
   };
 
   const handlePosterMouseEnter = () => {
@@ -70,6 +66,28 @@ const HomePage = () => {
       });
   };
 
+  const isHoverDevice = () =>
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  const handleMouseEnter = () => {
+    if (!isHoverDevice()) return;
+    handlePosterMouseEnter();
+  };
+
+  const handleMouseLeave = () => {
+    if (!isHoverDevice()) return;
+    handlePosterMouseLeave();
+  };
+
+  const handlePosterClick = () => {
+    if (isHoverDevice()) return;
+    if (videoPlaying) {
+      handlePosterMouseLeave();
+    } else {
+      handlePosterMouseEnter();
+    }
+  };
+
   return (
     <div>
       <div className="py-5">
@@ -81,8 +99,9 @@ const HomePage = () => {
             ? {}
             : { duration: 2.5, repeat: Infinity, ease: "easeInOut" }
         }
-        onMouseEnter={handlePosterMouseEnter}
-        onMouseLeave={handlePosterMouseLeave}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={handlePosterClick}
       >
         <motion.div
           animate={cardControls}
@@ -106,26 +125,19 @@ const HomePage = () => {
             />
           )}
 
-          <div className="hidden md:block">
-            <motion.div
-            animate={hasHovered ? { opacity: 0, y: 10 } : { opacity: 1, y: 0 }}
-            className="pointer-events-none absolute top-3 right-3 grid -translate-x-1/2 place-items-center rounded-full bg-black/60 px-4 py-1.5 text-sm font-medium text-white backdrop-blur"
-          >
-            Hover me
-          </motion.div>
-          </div>
+          <motion.div
+              animate={hasHovered ? { opacity: 0, y: 10 } : { opacity: 1, y: 0 }}
+              className="pointer-events-none absolute top-3 right-3 grid -translate-x-1/2 place-items-center rounded-full bg-black/60 px-4 py-1.5 text-sm font-medium text-white backdrop-blur"
+            >
+              <span className="md:hidden">Tap me</span>
+              <span className="hidden md:inline">Hover me</span>
+            </motion.div>
         </motion.div>
       </motion.div>
 
 <div
-  ref={titleRef}
   tabIndex={0}
-  aria-describedby="color-fact-card"
   className="relative flex w-fit flex-col items-center  mx-auto mt-5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-500/60"
-  onMouseEnter={handleFactMouseEnter}
-  onMouseLeave={handleFactMouseLeave}
-  onFocus={handleFactMouseEnter}
-  onBlur={handleFactMouseLeave}
 >
   {/* EVOLUTION */}
   <h1 className="flex items-baseline text-[clamp(1rem,8vw,3rem)] font-black leading-[0.85] tracking-[0.01em]">
@@ -193,21 +205,96 @@ const HomePage = () => {
   <div className="mt-2 md:mt-6 flex w-full items-center gap-2">
     <span className="h-px flex-1 bg-[#111]" />
 
-    {[
-      "#E3350D",
-      "#3FAE49",
-      "#3B82F6",
-      "#F5C518",
-      "#111111",
-      "#FFFFFF",
-      "#B91C3B",
-      "#7C3AED",
-    ].map((color, index) => (
-      <span
-        key={index}
-        className="h-2 w-2 rounded-full border border-[#111]/20"
-        style={{ backgroundColor: color }}
-      />
+    {colorFacts.map((color, index) => (
+      <span key={color.name} className="relative inline-block">
+        <motion.span
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-3 w-3 rounded-full border-2"
+          style={{
+            x: "-50%",
+            y: "-50%",
+            borderColor: color.hex,
+            boxShadow: `0 0 8px ${color.hex}`,
+          }}
+          animate={{ scale: [1, 2.6, 1], opacity: [0.5, 0, 0] }}
+          transition={{
+            duration: 1.8,
+            ease: "easeOut",
+            repeat: Infinity,
+            repeatDelay: 0.5,
+          }}
+        />
+        <motion.span
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-3 w-3 rounded-full border-2"
+          style={{
+            x: "-50%",
+            y: "-50%",
+            borderColor: color.hex,
+            boxShadow: `0 0 8px ${color.hex}`,
+          }}
+          animate={{ scale: [1, 2.6, 1], opacity: [0.5, 0, 0] }}
+          transition={{
+            duration: 1.8,
+            ease: "easeOut",
+            repeat: Infinity,
+            repeatDelay: 0.5,
+            delay: 0.9,
+          }}
+        />
+        <span
+          tabIndex={0}
+          role="button"
+          aria-label={`Pokémon ${color.name}, released ${color.year}`}
+          aria-describedby={`fact-pop-${color.name}`}
+          onMouseEnter={(e) => handleFactEnter(index, e)}
+          onMouseLeave={handleFactLeave}
+          onFocus={(e) => handleFactEnter(index, e)}
+          onBlur={handleFactLeave}
+          className={`relative block h-3 w-3 cursor-pointer overflow-hidden rounded-full ring-1 ring-white/20 transition-all duration-300 ease-out hover:scale-[1.8] hover:-rotate-12 hover:ring-white/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500/60 ${
+            activeFact === index ? "scale-[1.8]" : ""
+          }`}
+          style={{
+            backgroundColor: color.hex,
+            boxShadow:
+              "inset 0 1.5px 1px rgba(255,255,255,0.55), inset 0 -1.5px 2px rgba(0,0,0,0.4), 0 2px 5px rgba(0,0,0,0.45)",
+          }}
+        >
+          {/* <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,0.6),transparent_55%)]"
+          /> */}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_70%_85%,rgba(0,0,0,0.4),transparent_60%)]"
+          />
+        </span>
+        <AnimatePresence>
+          {activeFact === index && (
+            <motion.div
+              id={`fact-pop-${color.name}`}
+              initial={{ opacity: 0, y: 8, scale: 0.85 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 6, scale: 0.9 }}
+              transition={{ duration: 0.18, ease: "easeOut" }}
+              style={{ x: "-50%" }}
+              className={`pointer-events-none absolute left-1/2 z-30 w-max max-w-[85vw] ${
+                factPlacement === "above" ? "bottom-full mb-3" : "top-full mt-3"
+              }`}
+            >
+              <div className="flex flex-col items-center gap-1.5 rounded-2xl border border-white/10 bg-zinc-900/95 px-5 py-3 text-center shadow-2xl shadow-black/50 ring-1 ring-white/10 backdrop-blur">
+                <span style={{ backgroundColor: color.hex }} className="h-3.5 w-3.5 rounded-full ring-2 ring-white/40" />
+                <p className="whitespace-nowrap text-sm font-bold tracking-wide text-white">
+                  {color.title}
+                </p>
+                <p className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-400">
+                  Released in <span className="text-red-400">{color.year}</span>
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </span>
     ))}
 
     <span className="h-px flex-1 bg-[#111]" />
