@@ -52,8 +52,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed opacity-80">
-              A trainer&apos;s guide to the Pokémon world — browse Pokémons, explore the
-              regions, and uncover fun facts about every generation.
+              A trainer&apos;s guide to the Pokémon world. Browse Pokémons, explore the
+              regions and uncover fun facts about every generation.
             </p>
           </div>
 
@@ -66,7 +66,8 @@ const Footer = () => {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-sm opacity-80 transition hover:text-primary hover:opacity-100"
+                    onClick={scrollToTop}
+                    className="text-sm opacity-80 transition hover:text-[#df3924] hover:opacity-100"
                   >
                     {link.label}
                   </Link>
@@ -107,7 +108,7 @@ const Footer = () => {
           <div className="mx-auto mt-2 h-px w-1/4 min-w-[6rem] bg-base-content/20" />
           <p className="mt-2 text-center text-sm leading-relaxed opacity-90">
             Pokémon Explorer is a fan-made project and is not affiliated with, endorsed, or
-            sponsored by The Pokémon Company, Nintendo, or Game Freak. Pokémon and Pokémon
+            sponsored by The Pokémon Company, Nintendo, or Game Freak. <br/> Pokémon and Pokémon
             character names are trademarks of Nintendo.
           </p>
         </div>
